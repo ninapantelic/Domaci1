@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-title class="ion-text-center">New book</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Author</ion-label>
+    <ion-input type="text" [(ngModel)]="book.author" required></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Title</ion-label>
+    <ion-textarea [(ngModel)]="book.title" required></ion-textarea>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Year</ion-label>
+    <ion-textarea [(ngModel)]="book.year" required></ion-textarea>
+  </ion-item>
+
+  <ion-list>
+    <ion-item>
+      <ion-select
+        [(ngModel)]="book.read"
+        interface="popover"
+        placeholder="Have you read the book?"
+      >
+        <ion-select-option value="true">Yes</ion-select-option>
+        <ion-select-option value="false">No</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <ion-button class="ion-padding" color="dark" (click)="addBook(book)"
+    >Add book</ion-button
+  >
+</ion-content>
